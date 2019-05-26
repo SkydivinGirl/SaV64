@@ -1,0 +1,16 @@
+version;4;5;http://eagleup.wordpress.com/;
+settings;C:/Program Files/EAGLE-7.4.0/models/;C:/Program Files/ImageMagick-6.9.2-Q8/convert.exe;C:/Program Files/ImageMagick-6.9.2-Q8/composite.exe;del;
+color;0x141414;0x202020;silver;white;
+images;C:/Users/heather/Desktop/Projects/C64 Saver/Oops v3/EagleUp/;eagleUp_SaV64_v133_oops;png;1200;png;
+outline-line;0.000000;0.000000;10.000000;0.000000;1.000000;
+outline-line;10.000000;0.000000;10.000000;15.000000;1.000000;
+outline-line;10.000000;15.000000;0.000000;15.000000;1.000000;
+outline-line;0.000000;15.000000;0.000000;0.000000;1.000000;
+outline;0.000000;0.000000;10.000000;15.000000;1.000000;
+outline-complete;1.00;
+hole;7.470;1.300;0.600;0.500;
+hole;1.300;1.250;0.406;0.500;
+hole;7.469;11.600;0.406;0.500;
+hole;6.199;13.505;0.406;0.500;
+hole;4.929;11.600;0.406;0.500;
+hole-complete;element;5;silver;

@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>SaV64 Assembly - Commodore 64 (C64) Forum</title>
+
+<link rel="prev" href="http://www.lemon64.com/forum/viewtopic.php?t=58863&amp;view=previous" title="View previous topic">
+<link rel="next" href="http://www.lemon64.com/forum/viewtopic.php?t=58863&amp;view=next" title="View next topic">
+<link rel="up" href="http://www.lemon64.com/forum/viewforum.php?f=2" title="General">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=2" title="General">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=10" title="Games">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=7" title="Games Competitions">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=1" title="Help &amp; Support">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=18" title="Emulators">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=4" title="Scene">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=6" title="New Releases">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=3" title="Supermarket">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=9" title="Protovision">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=17" title="RGCD/Psytronik">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=15" title="Other 8-bit Commodore computers">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=12" title="Member Introductions">
+<link rel="chapter forum" href="http://www.lemon64.com/forum/viewforum.php?f=5" title="Chit Chat">
+
+<link rel="stylesheet" href="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/subSilver.css" type="text/css">
+<!--[if IE ]>
+  <link rel="stylesheet" href="templates/subSilver/ie.css" type="text/css">
+<![endif]-->
+<script type="text/javascript" src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/forum_pop.js"></script>
+<script>try {  for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){    var lastpass_f = document.forms[lastpass_iter];    if(typeof(lastpass_f.lpsubmitorig)=="undefined"){      if (typeof(lastpass_f.submit) == "function") {        lastpass_f.lpsubmitorig = lastpass_f.submit;        lastpass_f.submit = function(){          var form = this;          try {            if (document.documentElement && 'createEvent' in document)            {              var forms = document.getElementsByTagName('form');              for (var i=0 ; i<forms.length ; ++i)                if (forms[i]==form)                {                  var element = document.createElement('lpformsubmitdataelement');                  element.setAttribute('formnum',i);                  element.setAttribute('from','submithook');                  document.documentElement.appendChild(element);                  var evt = document.createEvent('Events');                  evt.initEvent('lpformsubmit',true,false);                  element.dispatchEvent(evt);                  break;                }            }          } catch (e) {}          try {            form.lpsubmitorig();          } catch (e) {}        }      }    }  }} catch (e) {}</script></head>
+<body bgcolor="#5287B8" link="#006699" text="#000000" vlink="#5493B4">
+
+<a name="top"></a>
+
+<iframe src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/banner_forum.htm" scrolling="no" frameborder="0" height="90" width="735"></iframe>
+
+<!--a href="http://lemon.spreadshirt.net" target="blank"><img src="/gfx/retrostore_banner.png" width="735" height="90" title="Buy some cool C64 T-shirts in the Lemon Retro Store!" border="0"></a><br>
+
+<br-->
+
+<table style="margin-top: 13px;" border="0" cellpadding="7" cellspacing="0" width="735">
+	<tbody><tr>
+		<td class="bodyline"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td><a href="http://www.lemon64.com/forum/index.php"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/forum_logo.gif" alt="Commodore 64 (C64) Forum Index" border="0" vspace="1"></a></td>
+				<td align="center" valign="middle" width="100%">
+				<table border="0" cellpadding="2" cellspacing="0">
+					<tbody><tr>
+						<td align="center" nowrap="nowrap" valign="top"><span class="mainmenu">&nbsp;<a href="http://www.lemon64.com/forum/faq.php" class="mainmenu"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_mini_faq.gif" alt="FAQ" border="0" height="13" hspace="3" width="12">FAQ</a></span><span class="mainmenu">&nbsp; &nbsp;<a href="http://www.lemon64.com/forum/search.php" class="mainmenu" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_mini_search.gif" alt="Search" border="0" height="13" hspace="3" width="12">Search</a>&nbsp; &nbsp;<a href="http://www.lemon64.com/forum/memberlist.php" class="mainmenu" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_mini_members.gif" alt="Memberlist" border="0" height="13" hspace="3" width="12">Memberlist</a>&nbsp; &nbsp;<a href="http://www.lemon64.com/forum/groupcp.php" class="mainmenu" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_mini_groups.gif" alt="Usergroups" border="0" height="13" hspace="3" width="12">Usergroups</a>&nbsp;
+						</span></td>
+					</tr>
+					<tr>
+						<td align="center" nowrap="nowrap" height="25" valign="top"><span class="mainmenu">&nbsp;<a href="http://www.lemon64.com/forum/profile.php?mode=editprofile" class="mainmenu" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_mini_profile.gif" alt="Profile" border="0" height="13" hspace="3" width="12">Profile</a>&nbsp; &nbsp;<a href="http://www.lemon64.com/forum/privmsg.php?folder=inbox" class="mainmenu" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_mini_message.gif" alt="You have no new messages" border="0" height="13" hspace="3" width="12">You have no new messages</a>&nbsp; &nbsp;<a href="http://www.lemon64.com/forum/login.php?logout=true&amp;sid=3ddd7499a99997aa663c0eb6d4fa907c" class="mainmenu" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_mini_login.gif" alt="Log out [ SkydivinGirl ]" border="0" height="13" hspace="3" width="12">Log out [ SkydivinGirl ]</a>&nbsp;</span></td>
+					</tr>
+				</tbody></table></td>
+			</tr>
+		</tbody></table>
+
+
+<table border="0" cellpadding="2" cellspacing="2" width="100%">
+  <tbody><tr>
+	<td colspan="2" align="left" valign="bottom"><a class="maintitle" href="http://www.lemon64.com/forum/viewtopic.php?t=58863&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">SaV64 Assembly</a><br>
+	  <span class="gensmall"><b></b><br>
+	  &nbsp; </span></td>
+  </tr>
+</tbody></table>
+
+<table border="0" cellpadding="2" cellspacing="2" width="100%">
+  <tbody><tr>
+	<td align="left" nowrap="nowrap" valign="bottom"><span class="nav"><a href="http://www.lemon64.com/forum/posting.php?mode=newtopic&amp;f=2" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/post.gif" alt="Post new topic" align="middle" border="0"></a>&nbsp;&nbsp;&nbsp;<a href="http://www.lemon64.com/forum/posting.php?mode=reply&amp;t=58863" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/reply.gif" alt="Reply to topic" align="middle" border="0"></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="http://www.lemon64.com/forum/index.php" class="nav">Commodore 64 (C64) Forum Index</a>
+	  -&gt; <a href="http://www.lemon64.com/forum/viewforum.php?f=2" class="nav">General</a></span></td>
+  </tr>
+</tbody></table>
+
+<table class="forumline" border="0" cellpadding="3" cellspacing="1" width="100%">
+	<tbody><tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="http://www.lemon64.com/forum/viewtopic.php?t=58863&amp;view=previous" class="nav" rel="nofollow">View previous topic</a> :: <a href="http://www.lemon64.com/forum/viewtopic.php?t=58863&amp;view=next" class="nav" rel="nofollow">View next topic</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" nowrap="nowrap" height="26" width="150">Author</th>
+		<th class="thRight" nowrap="nowrap">Message</th>
+	</tr>
+	<tr>
+		<td class="row1" align="left" valign="top" width="150"><div old="span" class="name" style="width:150px;overflow:hidden"><a name="711335"></a><b>SkydivinGirl</b></div><xbr><span class="postdetails">Master of C64<br><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/ale_4.gif" alt="Master of C64" title="Master of C64" border="0"><br><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/11834998354a8bf4fc88c73.jpg" alt="" style="max-width:80px;max-height:80px" border="0"><br><br>Joined: 18 Aug 2009<br>Age: 42<br>Posts: 1287<br>Location: Raleigh, NC USA</span><br></xbr></td>
+		<td class="row1" height="28" valign="top" width="100%"><table class="x_posttable" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td xwidth="100%"><a href="http://www.lemon64.com/forum/viewtopic.php?p=711335#711335"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_minipost.gif" alt="Post" title="Post" border="0" height="9" width="12"></a><span class="postdetails">Posted: Mon Dec 14, 2015 2:50 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: SaV64 Assembly</span></td>
+				<td align="right" nowrap="nowrap" valign="top"><a href="http://www.lemon64.com/forum/posting.php?mode=quote&amp;p=711335" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0"></a> <a href="http://www.lemon64.com/forum/posting.php?mode=editpost&amp;p=711335"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_edit.gif" alt="Edit/Delete this post" title="Edit/Delete this post" border="0"></a> <a href="http://www.lemon64.com/forum/posting.php?mode=delete&amp;p=711335&amp;sid=3ddd7499a99997aa663c0eb6d4fa907c"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_delete.gif" alt="Delete this post" title="Delete this post" border="0"></a>  </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="x_postcell"><div class="postbody"><span style="font-weight: bold">SaV64 Assembly</span>
+<br>
+
+<br>
+<span style="font-weight: bold">Bill of Materials</span>
+<br>
+
+<br>
+<a href="http://postimg.org/image/3uxn0z22d/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_001.jpg" border="0"></a>
+<br>
+
+<br>
+<table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">Qty&nbsp; &nbsp; &nbsp;Loc&nbsp; &nbsp; &nbsp;Markings&nbsp; &nbsp; Description
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;C1&nbsp; &nbsp; &nbsp; 105&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CAP CER 1UF 10V 10% RADIAL
+<br>
+2&nbsp; &nbsp; &nbsp; &nbsp;C2,C3&nbsp; &nbsp;104&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CAP CER 0.1UF 25V 10% RADIAL
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;C4&nbsp; &nbsp; &nbsp; 106&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CAP CER 10UF 10V 10% RADIAL
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;D1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DIODE GEN PURP 100V 200MA DO3
+<br>
+2&nbsp; &nbsp; &nbsp; &nbsp;F1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FUSE CLIP CART 250V 6.3A PCB
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;F1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FUSE GLASS 3.15A 125VAC 5X20MM
+<br>
+2&nbsp; &nbsp; &nbsp; &nbsp;J1/J2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;CON PWR JCK HIGH CUR
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;K1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RELAY TELECOM DPDT 3A 5V
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;LED2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LED IND 5MM RED/GRN WHT DIFF
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;LED2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HOLDER LED PANEL 5MM BLACK NYLON
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;R1&nbsp; &nbsp; &nbsp; 433&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RES SMD 43K OHM 0.1% 1/10W 0805
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;R2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RES SMD 232K OHM 0.1% 1/4W 0805
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;R3&nbsp; &nbsp; &nbsp; 4700&nbsp; &nbsp; &nbsp; &nbsp; RES SMD 470 OHM 1% 1/8W 0805
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;R4&nbsp; &nbsp; &nbsp; 182&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RES SMD 1.8K OHM 0.1% 1/10W 0805
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;R5&nbsp; &nbsp; &nbsp; Y,V,BR,G&nbsp; &nbsp; RES 470 OHM 1/2W 5% AXIAL
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;R6&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RES SMD 698 OHM 0.1% 1/4W 0805
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;R7&nbsp; &nbsp; &nbsp; 103&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RES SMD 10K OHM 0.1% 1/8W 0805
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;S1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SWITCH TACTILE SPST-NO 0.05A 12V
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;T1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TRANS PNP 40V 0.2A TO-92
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;U1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IC OVERVOLT PROT CTRLR SOT23-6
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;U2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OPTOISOLATR 5KV TRANSISTOR 4-SMD
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;X1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CONN DIN 7 PIN FEMALE PCB
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp;X2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TERMINAL BLOCK 5.08MM 2POS PCB
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;Circular DIN Connectors 7P MALE PLUG - DIN 
+270 NICKEL/GOLD REAN
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;CABLE 4COND 18AWG BLACK 30M (Fifty Nine 20 
+Inch Cables)
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;6cm BLACK 3/32" Polyolefin 2:1 Heat Shrink 
+Tubing
+<br>
+2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;PCB (Main, Daughter Board)
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Case
+<br>
+4&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;3M Rubber Bumper Pads Self Adhesive Anti Skid
+ Feet
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp;Mini Rubber Strain Relief Cord Boot Protector
+ Cable Sleeve Hose
+<br>
+1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Stickers</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+<span style="font-weight: bold">Daughter Board Assembly</span>
+<br>
+
+<br>
+Use the daughter board PCB, Optoisolator (U2), 470 Ohm Resistor (R3), 
+10K Ohm Resistor (R7), and Transistor (T1) to assemble the daughter 
+board.
+<br>
+
+<br>
+<a href="http://postimg.org/image/ulqn7cv4r/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_002.jpg" border="0"></a>
+<br>
+
+<br>
+The legs of the Optoisolator need to be bent in towards the chip so they
+ will fit on the daughter board PCB pads.  Prepare the transistor by 
+straightening the outside legs then bend the center leg towards the back
+ of the resistor.
+<br>
+
+<br>
+<a href="http://postimg.org/image/sq3uw76aj/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_003.jpg" border="0"></a> <a href="http://postimg.org/image/y42n3qw0r/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_004.jpg" border="0"></a>
+<br>
+
+<br>
+When soldering the Optoisolator, be certain you do not let solder fill 
+the holes in the PCB.  Next, attach the resistors.  Finally, insert the 
+transistor into the daughter board.  DO NOT cut the legs.  Solder the 
+transistor while not allowing too much solder to build up around the 
+legs.  Solder build up will keep the daughter board from sitting flush 
+against the main PCB.
+<br>
+
+<br>
+<a href="http://postimg.org/image/aokpyec9n/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_005.jpg" border="0"></a>
+<br>
+
+<br>
+<span style="font-weight: bold">Primary Board Assembly</span>
+<br>
+
+<br>
+Attach the SMD components (R1, R2, R4, R6, and U1) to the primary PCB.
+<br>
+
+<br>
+<a href="http://postimg.org/image/rg61h5cij/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_006.jpg" border="0"></a>
+<br>
+
+<br>
+Fit the daughter board to the primary PCB by inserting the transistor 
+pins from the daughter board into the transistor location on the primary
+ PCB (T1).
+<br>
+
+<br>
+<a href="http://postimg.org/image/9ty6cd4ez/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_007.jpg" border="0"></a>
+<br>
+
+<br>
+The daughter board requires a Ground connection that can be obtained in 
+one of two ways.  The first (recommended) way is by scraping away some 
+solder mask under the daughter board to get to the ground plane.  With 
+the daughter board in place, use a pin to scratch into the ground plane 
+through the hole in the daughter board near the Optoisolator.  Remove 
+the daughter board to scrape away a good size area.
+<br>
+
+<br>
+<a href="http://postimg.org/image/vjqnxt66d/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_008.jpg" border="0"></a>
+<br>
+
+<br>
+Once the solder mask is scraped away, place a solder blob on the ground 
+plane in the scraped off area.  Re-attach the daughter board then place a
+ pin in the opposite hole (near the LTC chip) to hold the daughter board
+ in place.  I use a pin like the following:
+<br>
+
+<br>
+<a href="http://postimg.org/image/tfe5k3kih/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/PIN.jpg" border="0"></a>
+<br>
+
+<br>
+While pushing the daughter board towards the primary PCB, heat the 
+ground pad with your soldering iron.  The solder blob on the ground 
+plane below will melt and attach to the daughter board.  Fill the rest 
+of the hole with solder.  Solder the transistor to the primary PCB and 
+trim the legs.  Remove the pin you used to hold the daughter board in 
+place then fill the hole all the way through the daughter board and 
+primary PCB with solder.
+<br>
+
+<br>
+<a href="http://postimg.org/image/9so8iy2l7/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_009.jpg" border="0"></a>
+<br>
+
+<br>
+An alternative way to get ground to the daughter board is to run a 
+jumper wire from Ground on the daughter board to another Ground 
+location.  The closest suggested attachment point is the ground side of 
+C2.  The ground side is the side closest to the edge of the PCB.
+<br>
+
+<br>
+Attach the capacitors (C1, C2, C3, C4), resistor (R5), Diode (D1), and 
+fuse holders.  When attaching the fuse holders, be sure the end of the 
+each holder that has the tab is facing towards the outside of the PCB.  
+Wiggle the fuse holders while inserting them into the PCB in order to 
+get them straight and flush with the PCB.
+<br>
+
+<br>
+<a href="http://postimg.org/image/ojnlulw2j/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_010.jpg" border="0"></a>
+<br>
+
+<br>
+Next, attach the relay (K1) and the terminal block (X2).  Completely 
+tighten the two screws on the terminal block before soldering it to the 
+PCB.
+<br>
+
+<br>
+<a href="http://postimg.org/image/y6r44bp23/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_011.jpg" border="0"></a>
+<br>
+
+<br>
+Attach the DIN connector (X1), reset switch (S1), and barrel jacks (J1, J2).
+<br>
+
+<br>
+<a href="http://postimg.org/image/nind5hf2z/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_012.jpg" border="0"></a>
+<br>
+
+<br>
+The AC and DC barrel connectors are disconnected by default.  In order 
+to connect them, use solder blobs to bridge across the gaps in the 
+tracks.  The AC gap is on the top of the PCB and the DC gap is on the 
+bottom.
+<br>
+
+<br>
+<a href="http://postimg.org/image/be83oi26z/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_013.jpg" border="0"></a> <a href="http://postimg.org/image/o1nv10h3v/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_014.jpg" border="0"></a>
+<br>
+
+<br>
+Output Cable Assembly
+<br>
+
+<br>
+Find the end of the 4-Wire cable that has the colors in the same order as the image below.
+<br>
+
+<br>
+<a href="http://postimg.org/image/5c0gy0dqz/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_015.jpg" border="0"></a>
+<br>
+
+<br>
+This is the end of the cable that attaches to the DIN connector.  Trim 
+20mm of the outer casing from this end of the cable.  Trim 45mm of the 
+outer casing from the other end of the cable.  Cut the heat shrink 
+tubing into 9mm pieces.
+<br>
+
+<br>
+<a href="http://postimg.org/image/7rxoy46fv/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_016.jpg" border="0"></a>
+<br>
+
+<br>
+Solder the DIN side of the cable to the output DIN connector using the 
+following layout.  This image shows the connector on the solder side.  
+Be sure to put a piece of heat shrink tubing on each wire before 
+attaching them to the DIN connector.
+<br>
+
+<br>
+<a href="http://postimg.org/image/3pjg6510v/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/DIN_Solder_Side.jpg" border="0"></a>
+<br>
+
+<br>
+After attaching all the wires, push the heat shrink tubing over the 
+solder joints then heat them to shrink the tubing.  I would also suggest
+ wrapping all the wires in a little electrical tape or a large piece of 
+heat shrink tubing to add a little extra protection as parts of the DIN 
+stain reliever may have slightly sharp edges.  Attach the strain 
+reliever then carefully bend the tabs over the wires.  Slide the cover 
+onto the wire then screw it down to the strain reliever.
+<br>
+
+<br>
+<a href="http://postimg.org/image/bw394crrv/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_017.jpg" border="0"></a>
+<br>
+
+<br>
+Drill a hole into either end plate depending on where you want the output wire to come out of the SaV64.
+<br>
+
+<br>
+<a href="http://postimg.org/image/5m7zhcsd7/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_018.jpg" border="0"></a>
+<br>
+
+<br>
+From the inner side of the end plate, insert the rubber strain relief 
+into the hole you drilled.  Lightly attach a zip tie around the rubber 
+boot.  Do not tighten it.  Run the output cable through the boot.
+<br>
+
+<br>
+<a href="http://postimg.org/image/4xz4yetnf/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_019.jpg" border="0"></a>
+<br>
+
+<br>
+Trim 5mm off each of the four output wires except the yellow wire.
+<br>
+
+<br>
+<a href="http://postimg.org/image/xwjlkzafv/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_020.jpg" border="0"></a>
+<br>
+
+<br>
+Attach the wires to the PCB as shown below.
+<br>
+
+<br>
+Black: Ground
+<br>
+Yellow: 5VDC
+<br>
+White: 9VAC
+<br>
+Red: 9VAC
+<br>
+
+<br>
+<a href="http://postimg.org/image/5df0564yj/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_021.jpg" border="0"></a>
+<br>
+
+<br>
+Hold the LED with the long leg on the right hand side then bend the LED 
+at a 90 degree angle towards you.   The bend point is marked in red.  
+After that, cut all the legs to the same length and attach the LED to 
+the PCB.  The LED should only be inserted far enough into the PCB to be 
+soldered.
+<br>
+
+<br>
+<a href="http://postimg.org/image/qgro1s2ll/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_022.jpg" border="0"></a>
+<br>
+
+<br>
+Insert the fuse and attach the output cable to the PCB using a zip tie. 
+ If the output wire is going out the same end as the inputs then you can
+ tighten the zip tie completely.  If going out the opposite end, attach 
+the cable tie very loosely until later when the end plate is in place.
+<br>
+
+<br>
+Add a solder blob across the two pads for the LOW trip point.
+<br>
+
+<br>
+<a href="http://postimg.org/image/5mfbjy889/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_023.jpg" border="0"></a>
+<br>
+
+<br>
+<span style="font-weight: bold">Case Assembly (Input &amp; Output Same Side)</span>
+<br>
+
+<br>
+Attach the LED holder to the end plate then slide the plate and stress 
+reliever on the output cable towards the PCB.  Move the rubber stress 
+reliever on top of the barrel connectors.  Align the LED with the LED 
+holder and push it forward into the holder.  Once the cable is where you
+ want it, tighten and trim the zip tie.
+<br>
+
+<br>
+<a href="http://postimg.org/image/az45y2w4p/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_024.jpg" border="0"></a>
+<br>
+
+<br>
+Attach and screw in the blank end plate to the main case then slide the 
+PCB into the other end of the case.  You will have to wiggle and adjust 
+the output cable to get things to line up.  You can get everything 
+centered fairly well with a little effort.
+<br>
+
+<br>
+<a href="http://postimg.org/image/htbpywyaj/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_025.jpg" border="0"></a>
+<br>
+
+<br>
+Attach the SaV64 sticker.
+<br>
+
+<br>
+<a href="http://postimg.org/image/edjlpd123/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_026.jpg" border="0"></a>
+<br>
+
+<br>
+<span style="font-weight: bold">Case Assembly (Input &amp; Output Opposite Sides)</span>
+<br>
+
+<br>
+Slide the plate and stress reliever on the output cable towards the PCB.
+  Move the rubber stress reliever on top of the PCB then tighten and 
+trim both zip ties.
+<br>
+
+<br>
+<a href="http://postimg.org/image/k2zu9o78b/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_027.jpg" border="0"></a>
+<br>
+
+<br>
+Insert the PCB into the case and tighten down the end plate.  Pull the LED a little ways out of the other end of the case.
+<br>
+
+<br>
+<a href="http://postimg.org/image/ec9nvxz8b/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_028.jpg" border="0"></a>
+<br>
+
+<br>
+Attach the LED holder to the end plate then push the LED into the 
+holder.  You can use a small screwdriver on the back plastic area of the
+ LED to make it easier.  Once the LED is attached, screw the end plate 
+to the case.
+<br>
+
+<br>
+<a href="http://postimg.org/image/j39jdys2j/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_029.jpg" border="0"></a>
+<br>
+
+<br>
+Attach the SaV64 sticker.
+<br>
+
+<br>
+<a href="http://postimg.org/image/eg3hc74pn/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_030.jpg" border="0"></a>
+<br>
+
+<br>
+<span style="font-weight: bold">Final Steps</span>
+<br>
+
+<br>
+Attach the rubber feet and layout sticker to the bottom of the case.
+<br>
+
+<br>
+<a href="http://postimg.org/image/eincz18d7/" target="_blank" class="postlink"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/Sa_V64_Assembly_031.jpg" border="0"></a></span></div><span class="gensmall"></span></td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="row1" align="left" valign="middle" width="150"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" nowrap="nowrap" height="28" valign="bottom" width="100%"><table border="0" cellpadding="0" cellspacing="0" height="18" width="18">
+			<tbody><tr>
+				<td nowrap="nowrap" valign="middle"><a href="http://www.lemon64.com/forum/profile.php?mode=viewprofile&amp;u=16892" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0"></a> <a href="http://www.lemon64.com/forum/privmsg.php?mode=post&amp;u=16892" rel="nofollow"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/icon_pm.gif" alt="Send private message" title="Send private message" border="0"></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script></td><td>&nbsp;</td><td nowrap="nowrap" valign="top"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div><noscript></noscript></td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/spacer.gif" alt="" height="1" width="1"></td>
+	</tr>
+
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28"><table border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr><form method="post" action="viewtopic.php?t=58863&amp;start=0"></form>
+				<td align="center"><span class="gensmall">Display posts from previous: <select name="postdays"><option value="0" selected="selected">All Posts</option><option value="1">1 Day</option><option value="7">7 Days</option><option value="14">2 Weeks</option><option value="30">1 Month</option><option value="90">3 Months</option><option value="180">6 Months</option><option value="364">1 Year</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">Oldest First</option><option value="desc">Newest First</option></select>&nbsp;<input value="Go" class="liteoption" name="submit" type="submit"></span></td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+</tbody></table>
+
+<table align="center" border="0" cellpadding="2" cellspacing="2" width="100%">
+  <tbody><tr>
+	<td align="left" nowrap="nowrap" valign="middle"><span class="nav"><a href="http://www.lemon64.com/forum/posting.php?mode=newtopic&amp;f=2"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/post.gif" alt="Post new topic" align="middle" border="0"></a>&nbsp;&nbsp;&nbsp;<a href="http://www.lemon64.com/forum/posting.php?mode=reply&amp;t=58863"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/reply.gif" alt="Reply to topic" align="middle" border="0"></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="http://www.lemon64.com/forum/index.php" class="nav">Commodore 64 (C64) Forum Index</a>
+	  -&gt; <a href="http://www.lemon64.com/forum/viewforum.php?f=2" class="nav">General</a></span></td>
+	<td align="right" nowrap="nowrap" valign="top"><span class="gensmall">All times are GMT</span><br><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td colspan="3" align="left"><span class="nav">Page <b>1</b> of <b>1</b></span></td>
+  </tr>
+</tbody></table>
+
+<table align="center" border="0" cellspacing="2" width="100%">
+  <tbody><tr>
+	<td align="left" nowrap="nowrap" valign="top" width="40%"><span class="gensmall"><a href="http://www.lemon64.com/forum/viewtopic.php?t=58863&amp;watch=topic&amp;start=0&amp;sid=3ddd7499a99997aa663c0eb6d4fa907c">Watch this topic for replies</a></span><br>
+	  &nbsp;<br>
+	  </td>
+	<td align="right" nowrap="nowrap" valign="top">
+<form method="get" name="jumpbox" action="viewforum.php" onsubmit="if(document.jumpbox.f.value == -1){return false;}"><table border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td nowrap="nowrap"><span class="gensmall">Jump to:&nbsp;<select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Select a forum</option><option value="-1">&nbsp;</option><option value="-1">Commodore 64</option><option value="-1">----------------</option><option value="2" selected="selected">General</option><option value="10">Games</option><option value="7">Games Competitions</option><option value="1">Help &amp; Support</option><option value="18">Emulators</option><option value="4">Scene</option><option value="6">New Releases</option><option value="3">Supermarket</option><option value="9">Protovision</option><option value="17">RGCD/Psytronik</option><option value="-1">&nbsp;</option><option value="-1">Off-Topic</option><option value="-1">----------------</option><option value="15">Other 8-bit Commodore computers</option><option value="12">Member Introductions</option><option value="5">Chit Chat</option></select><input name="sid" value="3ddd7499a99997aa663c0eb6d4fa907c" type="hidden">&nbsp;<input value="Go" class="liteoption" type="submit"></span></td>
+	</tr>
+</tbody></table></form>
+
+<span class="gensmall">You <b>can</b> post new topics in this forum<br>You <b>can</b> reply to topics in this forum<br>You <b>can</b> edit your posts in this forum<br>You <b>can</b> delete your posts in this forum<br>You <b>can</b> vote in polls in this forum<br></span></td>
+  </tr>
+</tbody></table>
+
+<script type="text/javascript">var s,v,i,l=document.getElementsByClassName("youtube"),y=0;if(l.length){s=document.createElement("STYLE");s.type="text/css";s.innerHTML='.youtube{background-color:#000;max-width:100%;overflow:hidden;position:relative;cursor:hand;cursor:pointer}.youtube img{bottom:0;display:block;left:0;margin:auto;max-width:100%;position:absolute;right:0;top:0;width:100%;height:auto}.youtube div{filter:alpha(opacity=80);opacity:.8;height:77px;left:50%;margin-left:-38px;margin-top:-38px;position:absolute;top:50%;width:77px;background:url("data:image/png;base64,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") no-repeat}';document.body.appendChild(s);while(v=l[y++]){i=document.createElement("IMG");i.setAttribute("src","http://i.ytimg.com/vi/"+v.id+"/hqdefault.jpg");v.appendChild(i);v.appendChild(document.createElement("DIV"));v.onclick=function(){var t=this,f=document.createElement("IFRAME");f.setAttribute("src","https://www.youtube.com/embed/"+t.id+"?autoplay=1&autohide=1&rel=0&border=0&wmode=opaque&enablejsapi=1");f.style.width=t.style.width;f.style.height=t.style.height;f.style.border="none";t.parentNode.replaceChild(f,t)}}}</script><a href="http://www.lemon64.com/forum/0/t58863.php"><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/0.gif" alt=" " border="0" height="1" width="1"></a><div style="padding: 6px; background-color: #FFFFCC; border: 1px solid #FFCC00; margin-top: 5px; margin-bottom: 5px; clear: left; font-size: 11px;" align="center">
+<strong>Tip:</strong> Get <a href="http://www.lemon64.com/links/redirect.php?id=1531" target="blank" style="font-family: arial; font-size: 11px; font-weight: bold; text-decoration: none;"><strong>C64 Forever</strong><img src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/popup_window.gif" style="margin-left: 3px;" border="0" height="10" width="11"></a> for super-comfy C64 emulation with pre-installed games, demos and other goodies!
+</div>
+
+
+<div align="center"><span class="copyright"><br><br>
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+--
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> &copy; 2001, 2005 phpBB Group<br />// -->
+</span></div>
+		</td>
+	</tr>
+</tbody></table>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="SaV64%20Assembly%20-%20Commodore%2064%20%28C64%29%20Forum_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2170817-21");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+
+</body></html>

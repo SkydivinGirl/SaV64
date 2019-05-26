@@ -1,0 +1,3 @@
+I made updates to the saV64 PCB. Increased pads for the optocoupler,
+increased hole diameter for cables, added a 10µF cap on the 5V output
+as a small buffer for a tiny bit slower reaction to voltage changes.
